@@ -36,7 +36,7 @@ const Login = () => {
       <h1>
         Welcome to the Bubble App!
         <form onSubmit={loginUser}>
-          <label htmlFor="username" data-test="username">
+          <label htmlFor="username">
             UserName
           </label>
           <input
@@ -46,7 +46,7 @@ const Login = () => {
             value={formValues.username}
             onChange={handleChange}
           />
-          <label htmlFor="password" data-test="password">
+          <label htmlFor="password">
             Password
           </label>
           <input
