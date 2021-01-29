@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { axiosWithAuth } from "../helpers/aixolsWithAuth";
+import { axiosWithAuth } from "./../helpers/axiosWithAuth";
 import { useHistory } from "react-router-dom";
 
 const Login = () => {
