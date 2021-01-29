@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { axiosWithAuth } from "./../helpers/axiosWithAuth";
+import axiosWithAuth from "./../helpers/axiosWithAuth";
 import { useHistory } from "react-router-dom";
 
 const Login = () => {
@@ -27,7 +26,7 @@ const Login = () => {
       .post("/login", formValues)
       .then((res) => {
         localStorage.setItem("token", res.data.payload);
-        push("/colors");
+        push("/bubbles");
       })
       .catch((err) => console.log(err));
   };
@@ -37,20 +36,24 @@ const Login = () => {
       <h1>
         Welcome to the Bubble App!
         <form onSubmit={loginUser}>
-          <label htmlFor="username">UserName</label>
+          <label htmlFor="username" data-test="username">
+            UserName
+          </label>
           <input
             type="text"
             id="username"
             name="username"
-            value="Lambda School"
+            value={formValues.username}
             onChange={handleChange}
           />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" data-test="password">
+            Password
+          </label>
           <input
             type="password"
             id="password"
             name="password"
-            value="i<3Lambd4"
+            value={formValues.password}
             onChange={handleChange}
           />
           <button>Login</button>
